@@ -1,0 +1,22 @@
+<div class="item">
+ <a class="itemLink product-item" href="/search/map/Mars/Viking/cerberus_enhanced">
+  <img alt="Cerberus Hemisphere Enhanced thumbnail" class="thumb" src="/cache/images/dfaf3849e74bf973b59eb50dab52b583_cerberus_enhanced.tif_thumb.png"/>
+ </a>
+ <div class="description">
+  <a class="itemLink product-item" href="/search/map/Mars/Viking/cerberus_enhanced">
+   <h3>
+    Cerberus Hemisphere Enhanced
+   </h3>
+  </a>
+  <span class="subtitle" style="float:left">
+   image/tiff 21 MB
+  </span>
+  <span class="pubDate" style="float:right">
+  </span>
+  <br/>
+  <p>
+   Mosaic of the Cerberus hemisphere of Mars projected into point perspective, a view similar to that which one would see from a spacecraft. This mosaic is composed of 104 Viking Orbiter images acquired…
+  </p>
+ </div>
+ <!-- end description -->
+</div>
