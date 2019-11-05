@@ -21,6 +21,8 @@
 </head>
 
 <body>
+        <container>{{marspage.mars_facts}}</container>
+
     <div class="container">
         <div class="jumbotron text-center">
             <h1>Mission to Mars</h1>
@@ -33,14 +35,15 @@
                 {{marspage.news_p}}
             </div>
             <div class="col col-7">
-                <h2>Featured Mars Image</h2>
-                {{marspage.featured_img}} 
-                <img src={{marspage.featured_img}} alt="Featured image">
+                    <h2>Featured Mars Image</h2>
+                    <img src={{marspage.featured_img}} alt="Featured image">
             </div>
             <div class="col col-5">
                 <h3>Current Weather on Mars</h3>
+                {{marspage.mars_weather}}
                 <br>
                 <h3>Mars Facts</h3>
+                <container>{{marspage.mars_facts}}</container>
             </div>
 
             <div class="col col-12">
