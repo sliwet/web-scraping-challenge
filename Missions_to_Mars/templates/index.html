@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mars</title>
+    <title>Mission to Mars</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -17,7 +17,61 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            color: navy;
+            font-size: 45px;
+            font-weight: bold;
+            /* font-style: italic; */
+            /* text-align:center; */
+        }
+
+        h2 {
+            /* color:lightcyan; */
+            font-size: 24px;
+            text-align: left;
+        }
+
+        h3 {
+            color: black;
+            font-size: 18px;
+            /* text-decoration: underline; */
+            /* font-style: italic; */
+            text-align: left;
+        }
+
+        h4 {
+            color: black;
+            font-size: 22px;
+            font-weight: bold;
+            /* text-decoration: underline; */
+            /* font-style: italic; */
+            text-align: center;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100%;
+            background-color: white;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .boxborder {
+            /* background: lightgray; */
+            padding: 10px;
+            border: lightgray 2px solid;
+        }
+
+        .boxmargin {
+            /* background: lightgray; */
+            padding: 2px;
+            border: lightgray 2px solid;
+            margin: 10px 0px 10px 0px;
+        }
+    </style>
 </head>
 
 <body>
@@ -36,25 +90,32 @@
         <div class="row">
             <div class="col col-8">
                 <h2>Featured Mars Image</h2>
-                <img width="100%" src={{marspage.featured_image_url}} alt="Featured image">
+                <img src={{marspage.featured_image_url}} alt="Featured image">
             </div>
-            <div class="col col-4" bordercolor="lightgray">
-                <h3>Current Weather on Mars</h3>
-                {{marspage.mars_weather}}
+            <div class="col col-4">
+                <div class="boxborder">
+                    <h3>Current Weather on Mars</h3>
+                    {{marspage.mars_weather}}
+                </div>
+                <br>
                 <h3>Mars Facts</h3>
-                <!-- {{marspage.marsfacts_html}} -->
+                {{marspage.marsfacts_html}}
             </div>
         </div>
+        <br><br>
         <div class="row">
             <div class="col col-12">
-                <h2>Mars Hemisphere</h2>
+                <h4>Mars Hemisphere</h4>
             </div>
         </div>
+        <hr>
         <div class="row">
             {% for image_url in  marspage.hemisphere_image_urls %}
             <div class="col col-6">
-                <img width="100%" src={{image_url.img_url}} alt={{image_url.img_url}}>
-                {{image_url.title}}
+                <div class="boxmargin">
+                    <img src={{image_url.img_url}} alt={{image_url.img_url}}>
+                    <h3>{{image_url.title}}</h3>
+                </div>
             </div>
             {% endfor %}
         </div>

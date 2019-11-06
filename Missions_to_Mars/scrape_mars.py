@@ -42,7 +42,7 @@ def scrape():
     url = base_url + '/spaceimages/?search=&category=Mars'
 
     browser.visit(url)
-    time.sleep(3)
+    time.sleep(1)
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -53,7 +53,7 @@ def scrape():
     url = 'https://twitter.com/marswxreport?lang=en'
 
     browser.visit(url)
-    time.sleep(3)
+    time.sleep(1)
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -62,15 +62,19 @@ def scrape():
     i = 0
     while streamitems[i].find('strong',class_='fullname').text.strip() != 'Mars Weather':
         i = i+1
+        
     mars_weather = streamitems[i].find('div',class_='js-tweet-text-container')
-    mars_weather = mars_weather.find('p').text
-    mars_weather = mars_weather.replace('\n', '')
+    temp = mars_weather.find('a').text
+    mars_weather = mars_weather.text
+    if len(temp) > 0:
+        mars_weather = mars_weather[:(len(mars_weather) - len(temp) - 1)].strip()
+    mars_weather = mars_weather.replace("\n", ", ")
 
     # Mars facts
 
     url = 'https://space-facts.com/mars/'
     browser.visit(url) # not necessary, but added for checking the operation
-    time.sleep(3)
+    time.sleep(1)
 
     dfs = pd.read_html(url)
     for df in dfs:
@@ -89,7 +93,7 @@ def scrape():
     url = base_url + '/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
 
     browser.visit(url)
-    time.sleep(3)
+    time.sleep(1)
     html = browser.html
     soup = BeautifulSoup(html, 'html.parser')
 
@@ -104,6 +108,7 @@ def scrape():
     img_urls = []
     for oneurl in urls:
         browser.visit(oneurl)
+        time.sleep(1)
         html = browser.html
         soup = BeautifulSoup(html, 'html.parser')
         oneurl = base_url+soup.find('img',class_='wide-image')['src']
