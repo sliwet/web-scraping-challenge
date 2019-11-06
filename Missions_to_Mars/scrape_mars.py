@@ -78,7 +78,7 @@ def scrape():
             df = df.rename(columns={0:"Description", 1:"Value"})
             df = df.set_index("Description")
             marsfacts_html = df.to_html().replace('\n', '')
-            df.to_html('marsfacts.html') # to save to a file to test
+            # df.to_html('marsfacts.html') # to save to a file to test
             break
         except:
             continue
