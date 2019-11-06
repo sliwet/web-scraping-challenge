@@ -90,3 +90,7 @@ Use MongoDB with Flask templating to create a new HTML page that displays all of
 ![ScreenShot-0-Full.png](Missions_to_Mars/ScreenShot-0-Full.png)
 ![ScreenShot-1-Top.png](Missions_to_Mars/ScreenShot-1-Top.png)
 ![ScreenShot-2-Bottom.png](Missions_to_Mars/ScreenShot-2-Bottom.png)
+
+### Copyright
+
+Trilogy Education Services © 2019. All Rights Reserved.
