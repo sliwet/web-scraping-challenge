@@ -21,7 +21,7 @@
 </head>
 
 <body>
-        <container>{{marspage.mars_facts}}</container>
+    <container>{{marspage.mars_facts}}</container>
 
     <div class="container">
         <div class="jumbotron text-center">
@@ -34,33 +34,31 @@
                 <h3>{{marspage.news_title}}</h3>
                 {{marspage.news_p}}
             </div>
-            <div class="col col-7">
-                    <h2>Featured Mars Image</h2>
-                    <img src={{marspage.featured_img}} alt="Featured image">
+        </div>
+        <div class="row">
+            <div class="col col-8">
+                <h2>Featured Mars Image</h2>
+                <img width="100%" src={{marspage.featured_image_url}} alt="Featured image">
             </div>
-            <div class="col col-5">
+            <div class="col col-4">
                 <h3>Current Weather on Mars</h3>
                 {{marspage.mars_weather}}
-                <br>
                 <h3>Mars Facts</h3>
-                <container>{{marspage.mars_facts}}</container>
+                <!-- {{marspage.marsfacts_html}} -->
             </div>
-
+        </div>
+        <div class="row">
             <div class="col col-12">
                 <h2>Mars Hemisphere</h2>
             </div>
+        </div>
+        <div class="row">
+            {% for image_url in  marspage.hemisphere_image_urls %}
             <div class="col col-6">
-                image and caption
+                <img width="100%" src={{image_url.img_url}} alt={{image_url.img_url}}>
+                {{image_url.title}}
             </div>
-            <div class="col col-6">
-                image and caption
-            </div>
-            <div class="col col-6">
-                image and caption
-            </div>
-            <div class="col col-6">
-                image and caption
-            </div>
+            {% endfor %}
         </div>
     </div> <!-- End of container -->
 </body>
